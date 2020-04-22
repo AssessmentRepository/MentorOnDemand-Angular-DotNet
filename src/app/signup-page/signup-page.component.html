@@ -1,0 +1,23 @@
+
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="form-group">
+        <label for="exampleInputusername">User Name</label>
+        <input type="text" class="form-control" formControlName="username" placeholder="User Name">
+        <small class="form-text text-muted"
+            *ngIf="signupForm.controls.username.touched && signupForm.controls.username.errors?.required">
+            Please enter user name.!
+        </small>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputPassword">Password</label>
+        <input type="password" class="form-control" formControlName="password" placeholder="Password">
+        <small class="form-text text-muted"
+            *ngIf="signupForm.controls.password.touched && signupForm.controls.password.errors?.required">
+            Please enter password.!
+        </small>
+    </div>
+    <button type="submit">Submit</button>
+
+</form>
+<button (click)="navpage()">Login Page</button>

@@ -1,0 +1,16 @@
+<form [formGroup]="myForm">
+	<select name="Technology" formControlName="filterMentor">
+    <option *ngFor="let k of MentorFilter; let i = index;"
+      [ngValue]="getValue(i)">
+      {{ getValue(i).displayText }}
+    </option>
+  </select>
+</form>
+
+<div>
+  <ul>
+    <li *ngFor= "let mentor of filteredMentors">
+      {{ mentor | json }}
+    </li>
+  </ul>
+</div>

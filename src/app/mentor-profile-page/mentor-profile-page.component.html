@@ -1,0 +1,40 @@
+<form [formGroup]="mentorProfileForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="form-group">
+        <label for="exampleInputusername">User Name</label>
+        <input type="text" class="form-control" formControlName="username" placeholder="User Name">
+        <small class="form-text text-muted"
+            *ngIf="mentorProfileForm.controls.username.touched && mentorProfileForm.controls.username.errors?.required">
+            Please enter user name.!
+        </small>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputExperience">Experience</label>
+        <input type="text" class="form-control" formControlName="experience" placeholder="experience">
+        <small class="form-text text-muted"
+            *ngIf="mentorProfileForm.controls.experience.touched && mentorProfileForm.controls.experience.errors?.required">
+            Please enter experience.!
+        </small>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputTime">Time</label>
+        <input type="time" class="form-control" formControlName="time" placeholder="Time">
+        <small class="form-text text-muted"
+            *ngIf="mentorProfileForm.controls.time.touched && mentorProfileForm.controls.time.errors?.required">
+            Please enter time.!
+        </small>
+    </div>
+    
+    <div class="form-group">
+        <label for="exampleInputTechnologies">Technologies</label>
+        <input type="text" class="form-control" formControlName="technologies" placeholder="Technologies">
+        <small class="form-text text-muted"
+            *ngIf="mentorProfileForm.controls.technologies.touched && mentorProfileForm.controls.technologies.errors?.required">
+            Please enter Technologies.!
+        </small>
+    </div>
+    
+    <button type="submit">Submit</button>
+
+</form>
